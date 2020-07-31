@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { configure } from 'mobx';
 import { Provider } from 'mobx-react';
-import Home from '@/containers/views/home';
+import Home from '@/containers/views/Home';
 import Test from '@/components/Test';
 import * as store from "./store";
 
