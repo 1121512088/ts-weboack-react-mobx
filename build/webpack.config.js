@@ -5,6 +5,7 @@ const { resolve } = require('./utils');
 const jsRules = require('./rules/jsRules');
 const styleRules = require('./rules/styleRules');
 const fileRules = require('./rules/fileRules');
+const optimization = require('./optimization'); // optimization进行第三方库代码分离
 
 module.exports = {
   entry: {
@@ -37,4 +38,9 @@ module.exports = {
   plugins: [
     ...plugins
   ],
+  optimization,
+  // externals: { // 用于在构建过程中忽略一些常用包的集成，从而降低构建时间和打包后的包大小  CDN引入
+  //   'react': 'window.React',
+  //   'react-dom': 'window.ReactDOM'
+  // }
 }

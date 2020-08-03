@@ -20,7 +20,6 @@ class Home extends ComponentExt<IProps> {
 
   render() {
     const { num } = this.props.globalStore;
-    console.log(this.props, 111111111);
     return (
       <div>
         <div>{num}</div>

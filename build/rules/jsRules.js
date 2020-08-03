@@ -4,10 +4,6 @@ const { resolve } = require('../utils');
 
 module.exports = [
   {
-    test: /\.(js|jsx)$/,
-    use: 'babel-loader',
-  },
-  {
     // 解析什么类型文件
     test: /\.ts(x?)$/,
     // 使用什么规则解析类型文件

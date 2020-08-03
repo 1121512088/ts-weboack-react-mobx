@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { configure } from 'mobx';
 import { Provider } from 'mobx-react';
-import Home from '@/containers/views/Home';
+import App from '@/containers/shared/App';
 import Test from '@/components/Test';
 import * as store from "./store";
 
@@ -15,7 +15,7 @@ const render = () => {
   ReactDom.render(
     <Provider {...store}>
       {/* <Test /> */}
-      <Home />
+      <App />
     </Provider>,
     document.querySelector('#app')
   );

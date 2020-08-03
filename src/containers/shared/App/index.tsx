@@ -1,21 +1,58 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
+function Loading() {
+  return <div>Loading...</div>
+}
+
+const Home = Loadable({
+  // /* webpackChunkName: "home" */ netWork 请求资源 名字 不设置 将为 0.js
+  loader: () => import(/* webpackChunkName: "home" */'@/containers/views/Home'),
+  loading: Loading,
+});
+
+const Mine = Loadable({
+  loader: () => import(/* webpackChunkName: "mine" */'@/containers/views/Mine'),
+  loading: Loading,
+});
+
+const Page = Loadable({
+  loader: () => import(/* webpackChunkName: "page" */'@/containers/views/Page'),
+  loading: Loading,
+});
 
 @hot(module)
 
-class Home extends React.Component {
-
+class App extends React.Component {
 
   render() {
 
     return (
-      <Router>
-        
-      </Router>
+      <div>
+        <Router>
+          <NavLink to="/home">home</NavLink>
+          <br />
+          <NavLink to="/mine">mine</NavLink>
+          <br />
+          <NavLink to="/page">page</NavLink>
+          <br />
+        </Router>
+        <br />
+        <br />
+
+        <Router>
+          <Switch>
+            <Route exact path="/home" component={Home}></Route>
+            <Route exact path="/mine" component={Mine}></Route>
+            <Route exact path="/page" component={Page}></Route>
+          </Switch>
+        </Router>
+      </div>
+
     )
   }
 }
 
-export default Home;
+export default App;

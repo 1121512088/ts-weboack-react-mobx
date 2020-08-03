@@ -11,6 +11,7 @@ module.exports = [
        * @description
        * 删除注释、空格、尽可能删除属性引号
        * 
+       * inject: true 默认为 true  他会将js资源注入到<body>标签的底部，如果要注入到头部填写head即可
        */
       removeComments: true,
       collapseWhitespace: true,
