@@ -2,6 +2,7 @@ import React from 'react';
 import { hot } from 'react-hot-loader';
 import { HashRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import Loadable from 'react-loadable';
+import Demo from '@/containers/views/Demo';
 
 function Loading() {
   return <div>Loading...</div>
@@ -31,6 +32,13 @@ class App extends React.Component {
 
     return (
       <div>
+
+        <Demo />
+
+        <br/>
+        <br/>
+        <br/>
+
         <Router>
           <NavLink to="/home">home</NavLink>
           <br />
