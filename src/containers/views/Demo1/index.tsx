@@ -43,6 +43,62 @@ export default () => {
   // 可以看到就算把整个ReadonlyArray赋值到一个普通数组也是不可以的。 但是你可以用类型断言重写  a = ro as number[]; // success
   // a = ro; // error!
 
+
+  // ----------      类类型 -------------
+  // class Animal {
+  //   name: string;
+  //   constructor(theName: string) { this.name = theName; console.log(theName, 111111); }
+  //   move(distanceInMeters: number = 0) {
+  //     console.log(`${this.name} moved ${distanceInMeters}m.`);
+  //   }
+  // }
+  // class Snake extends Animal {
+  //   constructor(name: string) { super(name); console.log(name, 222222); }
+  //   move(distanceInMeters = 5) {
+  //     console.log("Slithering...");
+  //     super.move(distanceInMeters);
+  //   }
+  // }
+  // class Horse extends Animal {
+  //   constructor(name: string) { super(name); console.log(name, 333333333); }
+  //   move(distanceInMeters = 45) {
+  //     console.log("Galloping...");
+  //     super.move(distanceInMeters);
+  //   }
+  // }
+  // let sam = new Snake("Sammy the Python");
+  // let tom: Animal = new Horse("Tommy the Palomino");
+  // sam.move();
+  // tom.move(34);
+
+  // private 私有的
+  // class Animal {
+  //   private name: string;
+  //   constructor(theName: string) { this.name = theName; }
+  // }
+
+  // new Animal("Cat").name; // 错误: 'name' 是私有的.
+
+
+  // enum CC {
+  //   Up = 1,
+  //   Down,
+  //   Left,
+  //   Right,
+  // }
+
+  enum CCC {
+    // constant members
+    None,
+    Read = 1 << 1,
+    Write = 1 << 2,
+    ReadWrite = Read | Write,
+    // computed member
+    G = "123".length
+  }
+  console.log(CCC['Read'], 8888);
+  console.log(CCC, 9999);
+
   return (
     <div>
 
