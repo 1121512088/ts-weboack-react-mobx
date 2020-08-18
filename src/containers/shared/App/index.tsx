@@ -21,7 +21,8 @@ class App extends React.Component {
 
     const arr = [
       'Home', 'Mine', 'Page',
-      'Demo', 'Demo1'
+      // 'Demo', 'Demo1', 
+      'Demo2'
     ];
 
     return (

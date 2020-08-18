@@ -80,6 +80,7 @@ export default () => {
   // new Animal("Cat").name; // 错误: 'name' 是私有的.
 
 
+  // ----------    enum  枚举类型 -------------
   // enum CC {
   //   Up = 1,
   //   Down,
@@ -87,17 +88,38 @@ export default () => {
   //   Right,
   // }
 
-  enum CCC {
-    // constant members
-    None,
-    Read = 1 << 1,
-    Write = 1 << 2,
-    ReadWrite = Read | Write,
-    // computed member
-    G = "123".length
-  }
-  console.log(CCC['Read'], 8888);
-  console.log(CCC, 9999);
+  // enum CCC {
+  //   // constant members
+  //   None,
+  //   Read = 1 << 1,
+  //   Write = 1 << 2,
+  //   ReadWrite = Read | Write,
+  //   // computed member
+  //   G = "123".length
+  // }
+  // console.log(CCC['Read'], 8888);
+  // console.log(CCC, 9999);
+
+  // enum CCC {
+  //   // constant members
+  //   None,
+  //   Read = 1 << 1,
+  //   Write = 1 << 2,
+  //   ReadWrite = Read | Write,
+  //   // computed member
+  //   G = "123".length
+  // }
+  // console.log(CCC, 9999);
+
+  // interface Named {
+  //   name: string;
+  // }
+  // let y = { name: 'Alice', location: 'Seattle' };
+  // function greet(n: Named) {
+  //   console.log('Hello, ' + n.name);
+  // }
+  // greet(y); // OK
+
 
   return (
     <div>
